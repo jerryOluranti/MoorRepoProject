@@ -64,8 +64,8 @@ const submitForm = () => {
 
     fetch("https://moor-repo-api.herokuapp.com/add_new", {
         method: 'POST',
-        body: data,
-        headers: {'Content-Type': 'application/json'}
+        body: data
+//         headers: {'Content-Type': 'application/json'}
     }).then(res => res.json())
         .then(res => alert("File Uploaded!"))
         .catch(err => alert(err))
