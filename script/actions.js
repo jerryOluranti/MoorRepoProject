@@ -49,7 +49,7 @@ const submitForm = () => {
         thesis = document.querySelector("#thesis").files[0],
         project_zip = document.querySelector("#project_zip").files[0];
 
-    if (!(title && desc && authors && thesis && project_zip)){
+    if (!(title && desc && authors)){
         alert("All fields are Required!")
         return;
     } 
