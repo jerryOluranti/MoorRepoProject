@@ -43,9 +43,9 @@ const search = () => {
         .catch(err => alert(err))
 }
 const submitForm = () => {
-    const title = document.querySelector("#project_title"),
-        desc = document.querySelector("#project_desc"),
-        authors = document.querySelector("#project_authors"),
+    const title = document.querySelector("#project_title").value,
+        desc = document.querySelector("#project_desc").value,
+        authors = document.querySelector("#project_authors").value,
         thesis = document.querySelector("#thesis").files[0],
         project_zip = document.querySelector("#project_zip").files[0];
 
@@ -55,12 +55,20 @@ const submitForm = () => {
     } 
 
     // console.log(title.value);
-    let data =  new FormData();
-    data.append('title', title.value);
-    data.append('desc', desc.value);
-    data.append('authors', authors.value);
-    data.append('thesis', thesis);
-    data.append('project_zip', project_zip);
+    
+    const data = {
+        title,
+        desc,
+        authors,
+        thesis,
+        project_zip
+    }
+//     let data =  new FormData();
+//     data.append('title', title.value);
+//     data.append('desc', desc.value);
+//     data.append('authors', authors.value);
+//     data.append('thesis', thesis);
+//     data.append('project_zip', project_zip);
 
     fetch("https://moor-repo-api.herokuapp.com/add", {
         method: 'POST',
