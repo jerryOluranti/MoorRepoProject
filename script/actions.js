@@ -49,7 +49,7 @@ const submitForm = () => {
         thesis = document.querySelector("#thesis").files[0],
         project_zip = document.querySelector("#project_zip").files[0];
 
-    if (!(title && desc && authors)){
+    if (!(title && desc && authors && thesis && project_zip)){
         alert("All fields are Required!")
         return;
     } 
@@ -59,13 +59,13 @@ const submitForm = () => {
     data.append('title', title.value);
     data.append('desc', desc.value);
     data.append('authors', authors.value);
-    data.append('thesis', '');
-    data.append('project_zip', '');
+    data.append('thesis', thesis);
+    data.append('project_zip', project_zip);
 
     fetch("https://moor-repo-api.herokuapp.com/add_new", {
         method: 'POST',
         body: data
-        // headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'}
     }).then(res => res.json())
         .then(res => alert("File Uploaded!"))
         .catch(err => alert(err))
