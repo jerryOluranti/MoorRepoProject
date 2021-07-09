@@ -62,7 +62,7 @@ const submitForm = () => {
     data.append('thesis', thesis);
     data.append('project_zip', project_zip);
 
-    fetch("https://moor-repo-api.herokuapp.com/add_new/", {
+    fetch("https://moor-repo-api.herokuapp.com/add_new", {
         method: 'POST',
         body: data
 //         headers: {'Content-Type': 'application/json'}
