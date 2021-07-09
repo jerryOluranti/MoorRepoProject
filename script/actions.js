@@ -59,8 +59,8 @@ const submitForm = () => {
     data.append('title', title.value);
     data.append('desc', desc.value);
     data.append('authors', authors.value);
-    data.append('thesis', thesis);
-    data.append('project_zip', project_zip);
+    data.append('thesis', '');
+    data.append('project_zip', '');
 
     fetch("https://moor-repo-api.herokuapp.com/add_new", {
         method: 'POST',
