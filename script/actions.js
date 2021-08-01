@@ -19,7 +19,7 @@ const render = arr => {
 window.onload = () => {
     const projects = document.querySelector(".projects");
 
-    fetch("https://moor-repo-api.herokuapp.com/projects").then(res => res.json())
+    fetch("https://localhost:3000/projects").then(res => res.json())
         .then(res => render(res))
 }
 
@@ -34,7 +34,7 @@ const search = () => {
     let data =  new FormData();
     data.append('text', search_text);
 
-    fetch("https://moor-repo-api.herokuapp.com/search", {
+    fetch("https://localhost:3000/search", {
         method: 'POST',
         body: data
         // headers: {'Content-Type': 'application/json'}
@@ -70,7 +70,7 @@ const submitForm = () => {
 //     data.append('thesis', thesis);
 //     data.append('project_zip', project_zip);
 
-    fetch("https://moor-repo-api.herokuapp.com/add", {
+    fetch("https://localhost:3000/add", {
         method: 'POST',
         body: data
 //         headers: {'Content-Type': 'application/json'}
@@ -94,7 +94,7 @@ const view = id => {
     let data =  new FormData();
     data.append('id', id);
 
-    fetch("https://moor-repo-api.herokuapp.com/view", {
+    fetch("https://localhost:3000/view", {
         method: 'POST',
         body: data
     }).then(res => res.json())
@@ -103,8 +103,8 @@ const view = id => {
             title.textContent = res[0].title;
             desc.textContent = res[0].desc;
             author.textContent = `Author(s): ${res[0].authors}`;
-            d_thesis.href = `https://moor-repo-api.herokuapp.com/file?name=${res[0].thesis}`;
-            d_zip.href = `https://moor-repo-api.herokuapp.com/file?name=${res[0].zip}`;
+            d_thesis.href = `https://localhost:3000/file?name=${res[0].thesis}`;
+            d_zip.href = `https://localhost:3000/file?name=${res[0].zip}`;
         })
         .catch(err => alert(err))
         
