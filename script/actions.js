@@ -103,8 +103,8 @@ const view = id => {
             title.textContent = res[0].title;
             desc.textContent = res[0].desc;
             author.textContent = `Author(s): ${res[0].authors}`;
-            d_thesis.href = `https://localhost:3000/file?name=${res[0].thesis}`;
-            d_zip.href = `https://localhost:3000/file?name=${res[0].zip}`;
+            d_thesis.href = `https://moor-repo-api.herokuapp.com/file?name=${res[0].thesis}`;
+            d_zip.href = `https://moor-repo-api.herokuapp.com/file?name=${res[0].zip}`;
         })
         .catch(err => alert(err))
         
