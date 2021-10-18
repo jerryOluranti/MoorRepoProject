@@ -1,5 +1,5 @@
 ### MoorRepoProject
-[Live preview] (https://moor-repo.netlify.app/)
+[https://moor-repo.netlify.app/]
 
 To run this file, you must have NodeJS Installed on your local machine
 
