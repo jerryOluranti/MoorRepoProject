@@ -103,8 +103,8 @@ const view = id => {
             title.textContent = res[0].title;
             desc.textContent = res[0].desc;
             author.textContent = `Author(s): ${res[0].authors}`;
-            d_thesis.href = `https://moor-repo-api.herokuapp.com/file/${res[0].thesis.replace('./uploads/', '')}`;
-            d_zip.href = `https://moor-repo-api.herokuapp.com/file/${res[0].zip.replace('./uploads/', '')}`;
+            d_thesis.href = `https://moor-repo-api.herokuapp.com/file/${res[0].thesis.replace('/', '*')}`;
+            d_zip.href = `https://moor-repo-api.herokuapp.com/file/${res[0].zip.replace('/', '*')}`;
         })
         .catch(err => alert(err))
         
