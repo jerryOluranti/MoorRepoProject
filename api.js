@@ -30,7 +30,7 @@ app.post("/view", async (req, res) => {
 })
 
 app.get("/file/:name", (req, res) => {
-    res.download(req.params.name, err => {
+    res.download(req.params.name.replace('*', '/'), err => {
         res.send(err);
     });
 })
