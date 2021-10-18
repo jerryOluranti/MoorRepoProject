@@ -29,8 +29,8 @@ app.post("/view", async (req, res) => {
     res.json(fetchProjects().filter(item => item.id == req.body.id))
 })
 
-app.get("/file", (req, res) => {
-    res.download(req.query.name, err => {
+app.get("/file/:name", (req, res) => {
+    res.download(req.params.name, err => {
         res.send(err);
     });
 })
