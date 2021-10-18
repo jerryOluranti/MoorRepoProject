@@ -19,7 +19,7 @@ const render = arr => {
 window.onload = () => {
     const projects = document.querySelector(".projects");
 
-    fetch("https://localhost:3000/projects").then(res => res.json())
+    fetch("https://moor-repo-api.herokuapp.com/projects").then(res => res.json())
         .then(res => render(res))
 }
 
@@ -34,7 +34,7 @@ const search = () => {
     let data =  new FormData();
     data.append('text', search_text);
 
-    fetch("https://localhost:3000/search", {
+    fetch("https://moor-repo-api.herokuapp.com/search", {
         method: 'POST',
         body: data
         // headers: {'Content-Type': 'application/json'}
@@ -70,7 +70,7 @@ const submitForm = () => {
 //     data.append('thesis', thesis);
 //     data.append('project_zip', project_zip);
 
-    fetch("https://localhost:3000/add", {
+    fetch("https://moor-repo-api.herokuapp.com/add", {
         method: 'POST',
         body: data
 //         headers: {'Content-Type': 'application/json'}
@@ -94,7 +94,7 @@ const view = id => {
     let data =  new FormData();
     data.append('id', id);
 
-    fetch("https://localhost:3000/view", {
+    fetch("https://moor-repo-api.herokuapp.com/view", {
         method: 'POST',
         body: data
     }).then(res => res.json())
